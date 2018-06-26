@@ -1,0 +1,19 @@
+<li class="card" [ngClass]="{'list-item-group': true, 
+                             'list-group-item-success': post.loveIts > 0,
+                             'list-group-item-danger': post.loveIts < 0 
+                            }">
+    <div class="card-body">
+        <div class="card-title text-center">
+            <h2 class="float-left"><span>{{post.title}}</span></h2>
+            <h6 class="text-dark"><span class="float-right">{{post.created_at | date: 'short'}}</span></h6>
+        </div>
+        <div class="clearfix"></div>
+        <p>{{post.content}}</p>
+        <div class="">
+            <button class="btn btn-success mr-1" (click)="onLove(post)">Love it <i class="fa fa-thumbs-up"></i></button>
+            <button class="btn btn-secondary" (click)="onDontLove(post)"> Don't love it <i class="fa fa-thumbs-down"></i></button>
+            <button class="btn btn-danger text-white float-right" (click)="onDeletePost(post)">Supprimer <i class="fa fa-trash"></i>
+  </button>
+        </div>
+    </div>
+</li>
